@@ -1,5 +1,7 @@
 .title {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 img {
