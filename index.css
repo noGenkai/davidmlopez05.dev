@@ -1,13 +1,8 @@
 .title {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
-    text-align: center;
 }
 
-img {
-    text-align: center;
-}
-
-#1 {
+body {
     text-align: center;
 }
