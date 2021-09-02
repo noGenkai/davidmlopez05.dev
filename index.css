@@ -1,5 +1,11 @@
 /* Cascading Style Sheets for "index.html" */
 
+.hyperlinka1 {
+    background: darkslategrey;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .title {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
