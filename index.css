@@ -1,8 +1,21 @@
+/* Cascading Style Sheets for "index.html" */
+
 .title {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
 }
 
-body {
+.aa {
     text-align: center;
 }
+
+/* Cascading Style Sheets for "about.html" */
+/* Cascading Style Sheets for "home.html" */
+/* Cascading Style Sheets for "a1.html" */
+.a {
+    text-align: center;
+}
+
+/* Cascading Style Sheets for "a2.html" */
+/* Cascading Style Sheets for "a3.html" */
+/* Cascading Style Sheets for "home.html" */
