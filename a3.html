@@ -1,12 +1,44 @@
 <html lang="en">
 <link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="index.js">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 3 ~~ Web Systems 1</title>
+    <title>Assignment 3 - Web Systems 1</title>
+
+<br>
+<a class="hyperlinkTunnel" href="index.html">Home</a>
+
 </head>
+
 <body>
-    <h2 class="head">Assignment 3</h2>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="topnav" id="myTopnav">
+        
+        <a href="index.html" class="active">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="a1.html">A1</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    
+    <div style="padding-left:16px">
+      <h2>Assignment 3 Placeholder</h2>
+      <p></p>
+    </div>
+    
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>    
 </body>
 </html>
