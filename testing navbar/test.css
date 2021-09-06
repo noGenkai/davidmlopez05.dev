@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #333;
+    background: #555;
     color: white;
 }
 
@@ -20,50 +20,57 @@ body {
     margin: 0.5rem;
 }
 
-.navbarLinks ul{
+.navLinks ul{
+    display: flex;
     margin: 0;
     padding: 0;
-    display: flex;
+    
 }
 
-.navbarLinks li {
+.navLinks li {
     list-style: none;
 }
 
-.navbarLinks li a {
-    text-decoration: none;
-    color: white;
+.navLinks li a {
     padding: 1rem;
+    text-decoration: none;
     display: block;
+    color: white;
+    
+    
 }
 
-.navbarLinks li:hover{
-    background-color: #555;
+.navLinks li:hover{
+    background-color: #777;
 }
 
-.toggleBtn {
+.waffle {
     position: absolute;
+
     top: 0.75rem;
     right: 1rem;
+
     display: none;
     flex-direction: column;
     justify-content: space-between;
+
     width: 18px;
     height: 18px;
 }
 
-.toggleBtn .bar{
+.waffle .bar{
     height: 3px;
     width: 100px;
+
     background: white;
 }
 
 @media (max-width: 600px) {
-    .toggleBtn {
+    .waffle {
         display: flex;
     }
 
-    .navbarLinks {
+    .navLinks {
         display: none;
         width: 100%
     }
@@ -73,20 +80,20 @@ body {
         align-items: flex-start;
     }
 
-    .navbarLinks ul {
+    .navLinks ul {
         width: 100%;
         flex-direction: column;
     }
 
-    .navbarLinks li {
+    .navLinks li {
         text-align: center;
     }
 
-    .navbarLinks li a {
+    .navLinks li a {
         padding: 0.5rem 1rem;
     }
 
-    .navbarLinks.active {
+    .navLinks.active {
         display: flex;
     }
 }

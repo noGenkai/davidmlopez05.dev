@@ -1,6 +1,6 @@
-const toggleBtn = document.getElementsByClassName('toggleBtn')[0]
-const navbarLinks = document.getElementsByClassName('navbarLinks')[0]
+const waffle = document.getElementsByClassName('waffle')[0]
+const navLinks = document.getElementsByClassName('navLinks')[0]
 
-toggleBtn.addEventListener('click', () => {
-    navbarLinks.classList.toggle('active')
+waffle.addEventListener('click', () => {
+    navLinks.classList.toggle('active')
 })
