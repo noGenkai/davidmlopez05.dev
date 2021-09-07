@@ -77,10 +77,11 @@ body {margin:0;font-family:Arial}
 }
 
 footer {
-  clear: both;
-  position: relative;
-  height: 200px;
-  margin-top: -200px;
+background-color: #FFF;
+position:fixed;
+bottom: 0px;
+width: 400px;
+text-align: center;
 }
 
 @media screen and (max-width: 600px) {
