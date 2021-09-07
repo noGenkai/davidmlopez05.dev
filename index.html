@@ -1,71 +1,36 @@
 <html lang="en">
-
 <head>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title> Home </title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="index.css">
-  <script src="index.js" defer></script>
-
+  <title>Home</title>
 </head>
-
 <body>
+  
+  <div class="topnav" id="topnav">
 
-  <div class="topnav" id="myTopnav">
+    <a href="#title" class="active"> David M. Lopez </a>
+    <a href="#about"> About </a>
+    <a href="#contact"> Contact </a>
 
-    <a href="#title" class="active">David M. Lopez</a>
+    <div class="dropdown">
+      <button class="dropbtn">Dropdown
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
     <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-
-    <div class="dropdown">
-
-      <button class="dropbtn">Instructions
-        <i class="fa fa-caret-down"></i>
-      </button>
-
-      <div class="dropdown-content">
-
-        <a href="http://roneaglin.online/cop4813/home/assignments/assignment-1/">Assignment 1</a>
-        <a href="http://roneaglin.online/cop4813/home/assignments/assignment-2/">Assignment 2</a>
-        <a href="http://roneaglin.online/cop4813/home/assignments/assignment-3/">Assignment 3</a>
-
-      </div>
-
-    </div>
-
-    <div class="dropdown">
-
-      <button class="dropbtn">Assignments
-        <i class="fa fa-caret-down"></i>
-      </button>
-
-      <div class="dropdown-content">
-
-        <a href="a1.html">Assignment 1</a>
-        <a href="a2.html">Assignment 2</a>
-        <a href="#a3.html">Assignment 3</a>
-
-      </div>
-
-    </div>
-
-    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 
   </div>
 
-  <div class="page1" style="padding-left:16px">
-
-    <h2>Welcome to my website.</h2>
-
-    <img src="/img/computer_img.jpg" alt="Computer Image">
-
-    <p>This website was created to facilitate my growth in the field of web design. I created this domain to sastisfy fifteen assignments for a class at Daytona State College. The class is COP4813, Web Systems 1.</p>
-
-    <footer> Created by: David M. Lopez </footer>
-  </div>
 </body>
 </html>
