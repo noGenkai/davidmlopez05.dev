@@ -102,3 +102,7 @@ body {margin:0;font-family:Arial}
     text-align: left;
   }
 }
+
+.welcome {
+  align-items: center;
+}
