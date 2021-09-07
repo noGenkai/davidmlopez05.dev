@@ -1,6 +1,4 @@
-body {
-  margin:0;font-family:Arial
-}
+body {margin:0;font-family:Arial}
 
 .topnav {
   overflow: hidden;
@@ -76,7 +74,6 @@ body {
 
 .welcome {
   text-align: center;
-  padding-left: 16px;
 }
 
 footer {
@@ -89,7 +86,7 @@ text-align: center;
 
 .fullsize {
   width: 100%;
-  height: 400px;
+  height: 40;
 }
 
 @media screen and (max-width: 600px) {
