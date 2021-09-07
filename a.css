@@ -106,3 +106,10 @@ body {margin:0;font-family:Arial}
 .welcome {
   align-items: center;
 }
+
+.footer {
+  clear: both;
+  position: relative;
+  height: 200px;
+  margin-top: -200px;
+}
