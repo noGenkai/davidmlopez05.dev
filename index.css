@@ -19,7 +19,7 @@ body {
   }
 
   .active {
-    background-color: #04AA6D;
+    background: lightskyblue;
     color: white;
   }
 
