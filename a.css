@@ -72,6 +72,17 @@ body {margin:0;font-family:Arial}
   display: block;
 }
 
+.welcome {
+  align-items: center;
+}
+
+.footer {
+  clear: both;
+  position: relative;
+  height: 200px;
+  margin-top: -200px;
+}
+
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
@@ -101,15 +112,4 @@ body {margin:0;font-family:Arial}
     width: 100%;
     text-align: left;
   }
-}
-
-.welcome {
-  align-items: center;
-}
-
-.footer {
-  clear: both;
-  position: relative;
-  height: 200px;
-  margin-top: -200px;
 }
