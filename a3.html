@@ -66,45 +66,43 @@
             <h2 class="lightcoral">Form</h2>
 
             <p>
-            <form class="lightcoral" name="form" onsubmit="return validateFirstName()" action="a3.html">
+            <form class="lightcoral" name="form" onsubmit="return validateForms()" method="post" action="mailto:david_lopez4502@daytonastate.edu">
+                
                 <p>
-                    <label>First Name: <input type="text" name="first_name"></label>
-                    <label>Last Name: <input type="text" name="last_name"></label>
-
-                    </br>
-                    </br>
-
-                    <label> City: <input type="text" name="city"></label>
-                    <label> State: <input type="text" name="state"></label>
-                    <label> Zipcode: <input type="number" name="zipcode"></label>
-
-                    </br>
-                    </br>
-
-                    <label> Email Address: <input type="email" name="email_address"></label>
-                    <label> Birth Date: <input type="date" name="birth_date"></label>
-
-                    </br>
-                    </br>
-
-                    <label> Enter Your Own Message: <input type="text" name="custom_message"></label>
-
-                    </br>
-                    </br>
-
-                    <label> How many states are in America? <input type="text" name="number_of_states"></label>
+                    <label>First Name: <input type="text" name="first_name" placeholder="John"></label>
+                    <label>Last Name: <input type="text" name="last_name" placeholder="Doe"></label>
                 </p>
+
+                <p>
+                    <label> City: <input type="text" name="city" placeholder="e.g. Daytona"></label>
+                    <label> State: <input type="text" name="state" placeholder="e.g. Florida"></label>
+                    <label> Zipcode: <input type="number" min="00001" max="99999" name="zipcode"
+                            placeholder="12345"></label>
+                </p>
+
+                <p>
+                    <label> Phone Number: <input type="number" name="phone_number" minlength="10" maxlength="10"
+                            placeholder="xxx-xxx-xxxx"> </label>
+
+                    <label> Email Address: <input type="email" name="email_address"
+                            placeholder="email@domain.com"></label>
+
+                    <label> Birth Date: <input type="date" name="birth_date"></label>
+                </p>
+
+                <textarea rows="7" cols="50" name="custom_message"
+                    placeholder="Your own personal message! You can type whatever you'd like here. Go crazy."></textarea>
+
+                </p>
+                <label> How many states are in the United States of America? <input type="number"
+                        name="number_of_states"></label>
+                </p>
+
                 <input type="submit" value="Submit">
             </form>
             </p>
         </div>
     </section>
-
-    <!-- <section>
-        <div id="section2">
-            this is section 2.
-        </div>
-    </section> -->
 
     <footer>
         Created by: David M. Lopez
@@ -120,22 +118,140 @@
             }
         }
 
-        function validateFirstName() {
-            let x = document.forms["form"]["first_name"].value;
+        function validateForms() {
+            const fName = document.forms["form"]["first_name"].value;
+            if (!validateName(fName, "first name.")) return false;
 
-            if (x == "" || x == null) {
-                alert("First name must be filled out.");
-                return false;
-            }
+            const lName = document.forms["form"]["last_name"].value;
+            if (!validateName(lName, "last name.")) return false;
+
+
+
+            const city = document.forms["form"]["city"].value;
+            if (!validateCity(city)) return false;
+
+            const state = document.forms["form"]["state"].value;
+            if (!validateState(state)) return false;
+
+            const zipcode = document.forms["form"]["zipcode"].value;
+            if (!validateZipcode(zipcode)) return false;
+
+
+
+            const phone_number = document.forms["form"]["phone_number"].value;
+            if (!validatePhoneNumber(phone_number)) return false;
+
+            const email_address = document.forms["form"]["email_address"].value;
+            if (!validateAddress(email_address)) return false;
+
+            if (!validateDate()) return false;
+
+            const america = document.forms["form"]["number_of_states"].value;
+            if (!validateAmerica(america)) return false;
+
+            return true;
         }
 
-        function validateLastName() {
-            let x = document.forms["form"]["first_name"].value;
+        function validateName(value, label) {
 
-            if (x == "" || x == null) {
-                alert("First name must be filled out.");
+            if (value == "" || value == null) {
+                alert("Please enter a value for " + label);
                 return false;
             }
+
+            if (parseInt(value)) {
+                alert("Your name should not include special characters or numbers.");
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateCity(value) {
+            if (value == "" || value == null) {
+                alert(" Please enter a value for city. ");
+                return false;
+            }
+            return true;
+        }
+
+        function validateState(value) {
+            if (value == "" || value == null) {
+                alert(" Please enter a value for state.");
+                return false;
+            }
+            return true;
+        }
+
+        function validateZipcode(value) {
+            if (value == "" || value == null) {
+                alert("Please enter a zipcode.")
+                return false;
+            }
+
+            if (value.length != 5) {
+                alert("Please enter a valid zipcode.");
+                return false;
+            }
+            return true;
+        }
+
+        function validatePhoneNumber() {
+            const phone_num = document.forms["form"]["phone_number"].value;
+
+            if (phone_num == "" || phone_num == null) {
+                alert("You must enter a phone number.");
+                return false;
+            }
+
+            if (phone_num.length == 7) {
+                alert("Please include the area code with your phone number.");
+                return false;
+            }
+
+            if (phone_num.length != 10) {
+                alert("Please input a valid phone number.");
+                return false;
+            }
+            return true;
+        }
+
+        function validateAddress(value) {
+            if (value == "" || value == null) {
+                alert("Please enter a value for the email address.");
+                return false;
+            }
+            return true;
+        }
+
+        function validateDate() {
+            const date = document.forms["form"]["birth_date"].value;
+            const birth_date = Date.parse(date);
+            const today = new Date();
+
+            if (date == "" || date == null) {
+                alert("Please fill out your birthdate.");
+                return false;
+            }
+
+            if (birth_date > today) {
+                alert("Your birthdate should be in the past.")
+                return false;
+            }
+            return true;
+        }
+
+        function validateAmerica(value) {
+            if (value == "" || value == null) {
+                alert("Please answer the question; how many states are in the United States of America?")
+                return false;
+            }
+
+            if (value != 50) {
+                alert("There are not " + value + " states in America. Please try again.");
+                return false;
+            }
+            return true;
         }
     </script>
 
