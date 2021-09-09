@@ -77,7 +77,7 @@ header {
     font-size: 40px;
 
     background: black;
-    color: lightskyblue;
+    color: lightgreen;
     width: 100%;
 
     padding-top: 5%;
@@ -109,10 +109,29 @@ section {
     margin-left: 5%;
 }
 
+#background1 {
+  background: black ;
+  width: 50%;    
+  margin-left: 5%;
+  align-items: center;
+}
+
 #paragraph {
     color: lightskyblue;
 
     padding: 3%
+}
+
+.paragraph1 {
+  color: lightskyblue;
+  text-align: center;
+  padding: 3%;
+}
+
+.lightcoral {
+  color: lightcoral;
+  text-align: center;
+  padding: 1%
 }
 
 footer {

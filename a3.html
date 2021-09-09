@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="index.css">
 
     <title> Home </title>
 </head>
@@ -62,25 +62,41 @@
     </header>
 
     <section>
-        <div id="section1">
-            <div id="background">
-                <p id="paragraph">
-                    This website was created for COP4813, Web Systems 1. I will be displaying all fifteen assignments
-                    for this class on this domain.
+        <div id="background1">
+            <h2 class="lightcoral">Form</h2>
 
-                    This website was created for COP4813, Web Systems 1. I will be displaying all fifteen assignments
-                    for this class on this domain.
+            <p>
+            <form class="lightcoral" name="form" onsubmit="return validateFirstName()" action="a3.html">
+                <p>
+                    <label>First Name: <input type="text" name="first_name"></label>
+                    <label>Last Name: <input type="text" name="last_name"></label>
 
-                    This website was created for COP4813, Web Systems 1. I will be displaying all fifteen assignments
-                    for this class on this domain.
+                    </br>
+                    </br>
 
-                    This website was created for COP4813, Web Systems 1. I will be displaying all fifteen assignments
-                    for this class on this domain.
+                    <label> City: <input type="text" name="city"></label>
+                    <label> State: <input type="text" name="state"></label>
+                    <label> Zipcode: <input type="number" name="zipcode"></label>
 
-                    This website was created for COP4813, Web Systems 1. I will be displaying all fifteen assignments
-                    for this class on this domain.
+                    </br>
+                    </br>
+
+                    <label> Email Address: <input type="email" name="email_address"></label>
+                    <label> Birth Date: <input type="date" name="birth_date"></label>
+
+                    </br>
+                    </br>
+
+                    <label> Enter Your Own Message: <input type="text" name="custom_message"></label>
+
+                    </br>
+                    </br>
+
+                    <label> How many states are in America? <input type="text" name="number_of_states"></label>
                 </p>
-            </div>
+                <input type="submit" value="Submit">
+            </form>
+            </p>
         </div>
     </section>
 
@@ -101,6 +117,24 @@
                 x.className += " responsive";
             } else {
                 x.className = "topnav";
+            }
+        }
+
+        function validateFirstName() {
+            let x = document.forms["form"]["first_name"].value;
+
+            if (x == "" || x == null) {
+                alert("First name must be filled out.");
+                return false;
+            }
+        }
+
+        function validateLastName() {
+            let x = document.forms["form"]["first_name"].value;
+
+            if (x == "" || x == null) {
+                alert("First name must be filled out.");
+                return false;
             }
         }
     </script>
