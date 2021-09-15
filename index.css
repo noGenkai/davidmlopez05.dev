@@ -157,6 +157,16 @@ footer{
     padding-bottom: 2%;
 }
 
+.btn {
+  border: 2px solid black;
+
+  color: white; text-decoration: none;
+  background-color: lightskyblue;
+
+  padding: 0.4% 1% 0.4% 1%;
+  font-size: medium;
+}
+
 /* Media queries for responsive navbar. */
 
   @media screen and (max-width: 600px) {
