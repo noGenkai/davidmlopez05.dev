@@ -128,7 +128,7 @@
 
                     <!-- Buttons Call Functions Upon Click. -->
                     <input type="button" class="btn" value="Calculate" id="yVal">
-                    <input type="button" class="btn" value="Graph" id="graph">
+                    <input type="button" class="btn" value="Graph" id="graph" onclick="graph();">
                     <a class="btn" href="https://jsfiddle.net/david_lopez/Lcq7sfjy/">JSFiddle</a><br><br>
 
                 </div>
@@ -145,49 +145,48 @@
         </footer>
 
         <script>
-            // Array "x" is Used to Capture All Values Within the User-Provided Minimum and Maximum X Values.
+            /* Array "x" is Used to Capture All Values Within the User-Provided Minimum and Maximum X Values. */
             var x = [];
-            // Array "y" is Used to Capture All Values for Y Based on User Inputs.
+
+            /* Array "y" is Used to Capture All Values for Y Based on User Inputs. */
             var y = [];
-            // Array "z" is Used to Capture All Values for X and Y Organized Like So: [x[i], y[i]].
+
+            /* Array "x" is Used to Capture All Values Within the User-Provided Minimum and Maximum X Values. */
             var z = [];
-            // M variable used to represent user input for M.
             var m = 0;
-            // B variable used to represent user input for B.
             var b = 0;
-            // A variable used to represent user input for A.
             var a = 0;
 
+            /* jQuery OnClick Function Displays X and Y Values */
             $("#yVal").click(function () {
                 ex();
                 display();
             });
 
-            $("#graph").click(function () {
-                graph();
-                ex();
-            });
-
+            /* Y Function to Calculate the Value of Y */
             function why(m, x, b) {
                 return m * x + b;
             }
 
+            /* X Function to Create X and Y Arrays Based on User Maximum and Minimum Input */
             function ex() {
                 m = Number($("#m").val());
                 b = Number($("#b").val());
                 var xmin = Number($("#xmin").val());
                 var xmax = Number($("#xmax").val());
+                var q = 0;
 
                 var i = 0;
-                for (var q = xmin; q <= xmax; q++) {
+                for (q = xmin; q <= xmax; q++) {
                     x[i] = q;
-                    y[i] = why(m, b, q);
+                    y[i] = why(m, q, b);
                     z[i] = [x[i], y[i]];
                     i++;
                 }
                 a = i - 1;
             }
 
+            /* Graph Function to Create Graph Using Highcharts CDN */
             function graph() {
                 const xminimum = document.getElementById("xmin");
 
@@ -225,6 +224,7 @@
                 });
             }
 
+            /* Display Function to Display X and Y Values */
             function display() {
                 var brrt = "";
                 brrt = "Y = " + m + "x + " + b + "<br><br>";
