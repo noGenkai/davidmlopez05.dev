@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        html {
+            text-align: center;
+            background-image: url("img/wall_img.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 40%;
+            max-height: 25%;
+        }
+    </style>
+
+    <title> Home </title>
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="content-wrap">
+            <nav>
+                <div class="topnav" id="myTopnav">
+                    <a href="#title" class="active">David M. Lopez</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <div class="dropdown">
+
+                        <button class="dropbtn">Instructions
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+
+                        <div class="dropdown-content">
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-1/">Instructions for
+                                A1</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-2/">Instructions for
+                                A2</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-3/">Instructions for
+                                A3</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-4/">Instructions for
+                                A4</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-5/">Instructions for
+                                A5</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-6/">Instructions for
+                                A6</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-7/">Instructions for
+                                A7</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-8/">Instructions for
+                                A8</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-9/">Instructions for
+                                A9</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-10/">Instructions for
+                                A10</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-11/">Instructions for
+                                A11</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-12/">Instructions for
+                                A12</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-13/">Instructions for
+                                A13</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-14/">Instructions for
+                                A14</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-15/">Instructions for
+                                A15</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Assignments
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="a1.html">A1: Hello World!</a>
+                            <a href="a2.html">A2: Full Website.</a>
+                            <a href="a3.html">A3: Form.</a>
+                            <a href="a4.html">A4: Point Slope Form Calculator.</a>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0);" style="font-size:15px;" class="icon"
+                        onclick="myFunction()">&#9776;</a>
+                </div>
+            </nav>
+            <div id="brrt">
+                <!-- Heading 3 Displays Title in HTML Output Screen. -->
+                <h3>
+                    Point Slope Form Calculator
+                </h3>
+
+                <!-- Heading 4 Displays Point Slope Form in HTML Output Screen. -->
+                <h4>
+                    y = mx + b
+                </h4>
+
+                <!-- Div Contains All Input Fields and Buttons. -->
+                <div>
+
+                    <!-- M Label Allows User To Enter a Value for M. -->
+                    <label for="m">M value:</label>
+                    <input type="text" name="m" id="m" size="5" value="10"><br>
+
+                    <!-- B Label Allows User To Enter a Value for B. -->
+                    <label for="b">B value:</label>
+                    <input type="text" name="b" id="b" size="5" value="0.5"><br><br>
+
+                    <!-- Minimum X Label Allows User To Enter a Minimum Value for X. -->
+                    <label for="xmin">minimum X value:</label>
+                    <input type="text" name="xmin" id="xmin" value="1"><br>
+
+                    <!-- Maximum X Label Allows User To Enter a Maximum Value for X. -->
+                    <label for="xmax">maximum X value:</label>
+                    <input type="text" name="xmax" id="xmax" value="10"><br><br>
+
+                    <!-- Buttons Call Functions Upon Click. -->
+                    <input type="button" class="btn" value="Calculate" id="yVal">
+                    <input type="button" class="btn" value="Graph" id="graph">
+                    <input type="button" class="btn" href="https://jsfiddle.net/david_lopez/Lcq7sfjy/"
+                        value="JsFiddle"><br><br>
+
+                </div>
+
+                <!-- P Displays X and Y Values. -->
+                <p id="output"></p>
+
+                <!-- Container Div Used to  -->
+                <div id="container"></div>
+            </div>
+        </div>
+        <footer>
+            Created by: David M. Lopez
+        </footer>
+
+        <script>
+            // Array "x" is Used to Capture All Values Within the User-Provided Minimum and Maximum X Values.
+            var x = [];
+            // Array "y" is Used to Capture All Values for Y Based on User Inputs.
+            var y = [];
+            // Array "z" is Used to Capture All Values for X and Y Organized Like So: [x[i], y[i]].
+            var z = [];
+            // M variable used to represent user input for M.
+            var m = 0;
+            // B variable used to represent user input for B.
+            var b = 0;
+            // A variable used to represent user input for A.
+            var a = 0;
+
+            $("#yVal").click(function () {
+                ex();
+                display();
+            });
+
+            $("#graph").click(function () {
+                graph();
+                ex();
+            });
+
+            function why(m, x, b) {
+                return m * x + b;
+            }
+
+            function ex() {
+                m = Number($("#m").val());
+                b = Number($("#b").val());
+                var xmin = Number($("#xmin").val());
+                var xmax = Number($("#xmax").val());
+
+                var i = 0;
+                for (var q = xmin; q <= xmax; q++) {
+                    x[i] = q;
+                    y[i] = why(m, b, q);
+                    z[i] = [x[i], y[i]];
+                    i++;
+                }
+                a = i - 1;
+            }
+
+            function graph() {
+                const xminimum = document.getElementById("xmin");
+
+                Highcharts.chart('container', {
+
+                    title: {
+                        text: 'Point Slope Form'
+                    },
+                    subtitle: {
+                        text: 'by: David M. Lopez'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Y Axis'
+                        }
+                    },
+                    xAxis: {
+                        accessibility: {
+                            rangeDescription: 'X Axis'
+                        }
+                    },
+                    plotOptions: {
+                        series: {
+                            label: {
+                                connectorAllowed: false
+                            },
+                            pointStart: xminimum
+                        }
+                    },
+                    series: [{
+                        name: 'Y Axis:',
+                        data: z
+                    }],
+
+                });
+            }
+
+            function display() {
+                var brrt = "";
+                brrt = "Y = " + m + "x + " + b + "<br><br>";
+
+                for (var i = 0; i <= a; i++) {
+                    brrt += " x = " + x[i] + ", y = " + y[i] + "<br>";
+                }
+                output.innerHTML = brrt;
+            }
+        </script>
+</body>
+
+</html>

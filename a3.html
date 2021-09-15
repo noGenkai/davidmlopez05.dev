@@ -12,102 +12,123 @@
 </head>
 
 <body>
-    <nav>
-        <div class="topnav" id="myTopnav">
-            <a href="#title" class="active">David M. Lopez</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <div class="dropdown">
+    <div class="page-container">
+        <div class="content-wrap">
+            <nav>
+                <div class="topnav" id="myTopnav">
+                    <a href="#title" class="active">David M. Lopez</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <div class="dropdown">
 
-                <button class="dropbtn">Instructions
-                    <i class="fa fa-caret-down"></i>
-                </button>
+                        <button class="dropbtn">Instructions
+                            <i class="fa fa-caret-down"></i>
+                        </button>
 
-                <div class="dropdown-content">
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-1/">Instructions for A1</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-2/">Instructions for A2</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-3/">Instructions for A3</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-4/">Instructions for A4</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-5/">Instructions for A5</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-6/">Instructions for A6</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-7/">Instructions for A7</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-8/">Instructions for A8</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-9/">Instructions for A9</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-10/">Instructions for A10</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-11/">Instructions for A11</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-12/">Instructions for A12</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-13/">Instructions for A13</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-14/">Instructions for A14</a>
-                    <a href="http://roneaglin.online/cop4813/home/assignments/assignment-15/">Instructions for A15</a>
+                        <div class="dropdown-content">
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-1/">Instructions for
+                                A1</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-2/">Instructions for
+                                A2</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-3/">Instructions for
+                                A3</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-4/">Instructions for
+                                A4</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-5/">Instructions for
+                                A5</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-6/">Instructions for
+                                A6</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-7/">Instructions for
+                                A7</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-8/">Instructions for
+                                A8</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-9/">Instructions for
+                                A9</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-10/">Instructions for
+                                A10</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-11/">Instructions for
+                                A11</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-12/">Instructions for
+                                A12</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-13/">Instructions for
+                                A13</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-14/">Instructions for
+                                A14</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-15/">Instructions for
+                                A15</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Assignments
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="a1.html">A1: Hello World!</a>
+                            <a href="a2.html">A2: Full Website.</a>
+                            <a href="a3.html">A3: Form.</a>
+                            <a href="a4.html">A4: Calculator.</a>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0);" style="font-size:15px;" class="icon"
+                        onclick="myFunction()">&#9776;</a>
                 </div>
-            </div>
+            </nav>
 
-            <div class="dropdown">
-                <button class="dropbtn">Assignments
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="a1.html">A1: Hello World!</a>
-                    <a href="a2.html">A2: Full Website.</a>
-                    <a href="a3.html">A3: Form.</a>
+            <header>
+                davidmlopez05.dev
+            </header>
+
+            <section>
+                <div id="background1">
+                    <h2 class="lightcoral">Form</h2>
+
+                    <p>
+                    <form class="lightcoral" name="form" onsubmit="return validateForms()" method="post"
+                        action="mailto:david_lopez4502@daytonastate.edu">
+
+                        <p>
+                            <label>First Name: <input type="text" name="first_name" placeholder="John"></label>
+                            <label>Last Name: <input type="text" name="last_name" placeholder="Doe"></label>
+                        </p>
+
+                        <p>
+                            <label> City: <input type="text" name="city" placeholder="e.g. Daytona"></label>
+                            <label> State: <input type="text" name="state" placeholder="e.g. Florida"></label>
+                            <label> Zipcode: <input type="number" min="00001" max="99999" name="zipcode"
+                                    placeholder="12345"></label>
+                        </p>
+
+                        <p>
+                            <label> Phone Number: <input type="number" name="phone_number" minlength="10" maxlength="10"
+                                    placeholder="xxx-xxx-xxxx"> </label>
+
+                            <label> Email Address: <input type="email" name="email_address"
+                                    placeholder="email@domain.com"></label>
+
+                            <label> Birth Date: <input type="date" name="birth_date"></label>
+                        </p>
+
+                        <textarea rows="7" cols="50" name="custom_message"
+                            placeholder="Your own personal message! You can type whatever you'd like here. Go crazy."></textarea>
+
+                        </p>
+                        <label> How many states are in the United States of America? <input type="number"
+                                name="number_of_states"></label>
+                        </p>
+
+                        <input type="submit" value="Submit">
+                    </form>
+                    </p>
                 </div>
-            </div>
+            </section>
 
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+            <footer>
+                Created by: David M. Lopez
+            </footer>
         </div>
-    </nav>
-
-    <header>
-        davidmlopez05.dev
-    </header>
-
-    <section>
-        <div id="background1">
-            <h2 class="lightcoral">Form</h2>
-
-            <p>
-            <form class="lightcoral" name="form" onsubmit="return validateForms()" method="post" action="mailto:david_lopez4502@daytonastate.edu">
-                
-                <p>
-                    <label>First Name: <input type="text" name="first_name" placeholder="John"></label>
-                    <label>Last Name: <input type="text" name="last_name" placeholder="Doe"></label>
-                </p>
-
-                <p>
-                    <label> City: <input type="text" name="city" placeholder="e.g. Daytona"></label>
-                    <label> State: <input type="text" name="state" placeholder="e.g. Florida"></label>
-                    <label> Zipcode: <input type="number" min="00001" max="99999" name="zipcode"
-                            placeholder="12345"></label>
-                </p>
-
-                <p>
-                    <label> Phone Number: <input type="number" name="phone_number" minlength="10" maxlength="10"
-                            placeholder="xxx-xxx-xxxx"> </label>
-
-                    <label> Email Address: <input type="email" name="email_address"
-                            placeholder="email@domain.com"></label>
-
-                    <label> Birth Date: <input type="date" name="birth_date"></label>
-                </p>
-
-                <textarea rows="7" cols="50" name="custom_message"
-                    placeholder="Your own personal message! You can type whatever you'd like here. Go crazy."></textarea>
-
-                </p>
-                <label> How many states are in the United States of America? <input type="number"
-                        name="number_of_states"></label>
-                </p>
-
-                <input type="submit" value="Submit">
-            </form>
-            </p>
-        </div>
-    </section>
-
-    <footer>
-        Created by: David M. Lopez
-    </footer>
-
+    </div>
     <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");
