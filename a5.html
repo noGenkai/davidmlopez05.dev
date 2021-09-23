@@ -105,19 +105,22 @@
             }
         }
         function spiroGraph1() {
-            //create the canvas seen before and after the Display Canvas button is pressed. 
+            // Create the canvas seen before and after the Display Canvas button is pressed. 
             const canvas = document.querySelector('#canvas');
 
-            //define the height of the canvas as the webpage height.
+            // Define the height of the canvas as the webpage height. 
+            // The height of the current window will be the starting height of the canvas. 
+            // For example, if the windows is currently open at 250 px, that will be the starting height. 
+            // There for if you have a mobile device, the canvas will begin with mobile height sizes and if you have a Large Monitor it will open up with larger sizes.
             canvas.height = window.innerHeight;
-            //define the width of the canvas as the webpage width.
+            // Define the width of the canvas as the webpage width. (Same thing goes for width)
             canvas.width = window.innerWidth;
 
-            //equation to define the parameters of the spirograph.
-            //R = radius of outer circle.
-            //r = radius of inner circle.
-            //O = offset of the pen from the center.
-            //t = variable defined for later.
+            // equation to define the parameters of the spirograph.
+            // R = radius of outer circle.
+            // r = radius of inner circle.
+            // O = offset of the pen from the center.
+            // t = variable defined for later.
             let R = 102, r = 0.6, O = 110, t = 3;
             let x, y, x1, y1;
 
