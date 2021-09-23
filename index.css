@@ -167,6 +167,32 @@ footer{
   font-size: medium;
 }
 
+.btn1 {
+  border: 2px solid lightskyblue;
+
+  color: black; text-decoration: none;
+  background-color: white;
+
+  padding: 0.4% 1% 0.4% 1%;
+  font-size: medium;
+}
+
+.bodybody { 
+  margin: 0; 
+  overflow: hidden;
+  background: black;
+}
+
+#canvasForA5{
+  text-align: center;
+}
+
+#canvasForA5 > canvas {
+  text-align: center;
+  margin: 5% 0% 0% 0%;
+  background: lightskyblue;
+}
+
 /* Media queries for responsive navbar. */
 
   @media screen and (max-width: 600px) {

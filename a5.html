@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="index.css">
+
+    <title> Home </title>
+
+
+</head>
+
+<body class="bodybody">
+    <div class="page-container">
+        <div class="content-wrap">
+            <nav>
+                <div class="topnav" id="myTopnav">
+                    <a href="#title" class="active">David M. Lopez</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <div class="dropdown">
+
+                        <button class="dropbtn">Instructions
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+
+                        <div class="dropdown-content">
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-1/">Instructions for
+                                A1</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-2/">Instructions for
+                                A2</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-3/">Instructions for
+                                A3</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-4/">Instructions for
+                                A4</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-5/">Instructions for
+                                A5</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-6/">Instructions for
+                                A6</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-7/">Instructions for
+                                A7</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-8/">Instructions for
+                                A8</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-9/">Instructions for
+                                A9</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-10/">Instructions for
+                                A10</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-11/">Instructions for
+                                A11</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-12/">Instructions for
+                                A12</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-13/">Instructions for
+                                A13</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-14/">Instructions for
+                                A14</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-15/">Instructions for
+                                A15</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Assignments
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="a1.html">A1: Hello World!</a>
+                            <a href="a2.html">A2: Full Website.</a>
+                            <a href="a3.html">A3: Form.</a>
+                            <a href="a4.html">A4: Calculator.</a>
+                            <a href="a5.html">A5: Spirographs.</a>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0);" style="font-size:15px;" class="icon"
+                        onclick="myFunction()">&#9776;</a>
+                </div>
+            </nav>
+
+            <div id="canvasForA5">
+                <canvas id='canvas'></canvas>
+                <br>
+                <button class="btn1" onclick="spiroGraph1()">Spirograph 1</button>
+                <button class="btn1" onclick="spiroGraph2()">Spirograph 2</button>
+                <button class="btn1" onclick="spiroGraph3()">Spirograph 3</button>
+                <button class="btn1" onclick="spiroGraph4()">Spirograph 4</button>
+                <button class="btn1" onclick="spiroGraph5()">Spirograph 5</button>
+            </div>
+        </div>
+
+        <footer>
+            Created by: David M. Lopez
+        </footer>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+        function spiroGraph1() {
+            //create the canvas seen before and after the Display Canvas button is pressed. 
+            const canvas = document.querySelector('#canvas');
+
+            //define the height of the canvas as the webpage height.
+            canvas.height = window.innerHeight;
+            //define the width of the canvas as the webpage width.
+            canvas.width = window.innerWidth;
+
+            //equation to define the parameters of the spirograph.
+            //R = radius of outer circle.
+            //r = radius of inner circle.
+            //O = offset of the pen from the center.
+            //t = variable defined for later.
+            let R = 102, r = 0.6, O = 110, t = 3;
+            let x, y, x1, y1;
+
+            let canvasContext = canvas.getContext('2d');
+            canvasContext.strokeStyle = 'black';
+            canvasContext.beginPath();
+            for (let t = 0; t <= 100 * Math.PI * 2; t += Math.PI / 36) {
+                canvasContext.moveTo(x1, y1);
+                x = canvas.width / 2 + ((R + r) * Math.cos(t) - (r + O) * Math.cos(((R + r) / r) * t));
+                y = canvas.height / 2 - ((R + r) * Math.sin(t) - (r + O) * Math.sin(((R + r) / r) * t));
+                canvasContext.lineTo(x, y);
+                x1 = x;
+                y1 = y;
+            }
+
+            canvasContext.stroke();
+            canvasContext.closePath();
+
+        }
+
+        function spiroGraph2() {
+            //create the canvas seen before and after the Display Canvas button is pressed. 
+            const canvas = document.querySelector('#canvas');
+
+            //define the height of the canvas as the webpage height.
+            canvas.height = window.innerHeight;
+            //define the width of the canvas as the webpage width.
+            canvas.width = window.innerWidth;
+
+            //equation to define the parameters of the spirograph.
+            //R = radius of outer circle.
+            //r = radius of inner circle.
+            //O = offset of the pen from the center.
+            //t = variable defined for later.
+            let R = 156, r = 0.06, O = 110 , t = 3;
+            let x, y, x1, y1;
+
+            let canvasContext = canvas.getContext('2d');
+            canvasContext.strokeStyle = 'black';
+            canvasContext.beginPath();
+            for (let t = 0; t <= 100 * Math.PI * 2; t += Math.PI / 36) {
+                canvasContext.moveTo(x1, y1);
+                x = canvas.width / 2 + ((R + r) * Math.cos(t) - (r + O) * Math.cos(((R + r) / r) * t));
+                y = canvas.height / 2 - ((R + r) * Math.sin(t) - (r + O) * Math.sin(((R + r) / r) * t));
+                canvasContext.lineTo(x, y);
+                x1 = x;
+                y1 = y;
+            }
+
+            canvasContext.stroke();
+            canvasContext.closePath();
+
+        }
+
+        function spiroGraph3() {
+            //create the canvas seen before and after the Display Canvas button is pressed. 
+            const canvas = document.querySelector('#canvas');
+
+            //define the height of the canvas as the webpage height.
+            canvas.height = window.innerHeight;
+            //define the width of the canvas as the webpage width.
+            canvas.width = window.innerWidth;
+
+            //equation to define the parameters of the spirograph.
+            //R = radius of outer circle.
+            //r = radius of inner circle.
+            //O = offset of the pen from the center.
+            //t = variable defined for later.
+            let R = 100, r = 100, O = 100, t = 100;
+            let x, y, x1, y1;
+
+            let canvasContext = canvas.getContext('2d');
+            canvasContext.strokeStyle = 'black';
+            canvasContext.beginPath();
+            for (let t = 0; t <= 100 * Math.PI * 2; t += Math.PI / 36) {
+                canvasContext.moveTo(x1, y1);
+                x = canvas.width / 2 + ((R + r) * Math.cos(t) - (r + O) * Math.cos(((R + r) / r) * t));
+                y = canvas.height / 2 - ((R + r) * Math.sin(t) - (r + O) * Math.sin(((R + r) / r) * t));
+                canvasContext.lineTo(x, y);
+                x1 = x;
+                y1 = y;
+            }
+
+            canvasContext.stroke();
+            canvasContext.closePath();
+
+        }
+
+        function spiroGraph4() {
+            //create the canvas seen before and after the Display Canvas button is pressed. 
+            const canvas = document.querySelector('#canvas');
+
+            //define the height of the canvas as the webpage height.
+            canvas.height = window.innerHeight;
+            //define the width of the canvas as the webpage width.
+            canvas.width = window.innerWidth;
+
+            //equation to define the parameters of the spirograph.
+            //R = radius of outer circle.
+            //r = radius of inner circle.
+            //O = offset of the pen from the center.
+            //t = variable defined for later.
+            let R = 500, r = 10, O = 15, t = 0.2;
+            let x, y, x1, y1;
+
+            let canvasContext = canvas.getContext('2d');
+            canvasContext.strokeStyle = 'black';
+            canvasContext.beginPath();
+            for (let t = 0; t <= 100 * Math.PI * 2; t += Math.PI / 36) {
+                canvasContext.moveTo(x1, y1);
+                x = canvas.width / 2 + ((R + r) * Math.cos(t) - (r + O) * Math.cos(((R + r) / r) * t));
+                y = canvas.height / 2 - ((R + r) * Math.sin(t) - (r + O) * Math.sin(((R + r) / r) * t));
+                canvasContext.lineTo(x, y);
+                x1 = x;
+                y1 = y;
+            }
+
+            canvasContext.stroke();
+            canvasContext.closePath();
+
+        }
+
+        function spiroGraph5() {
+            //create the canvas seen before and after the Display Canvas button is pressed. 
+            const canvas = document.querySelector('#canvas');
+
+            //define the height of the canvas as the webpage height.
+            canvas.height = window.innerHeight;
+            //define the width of the canvas as the webpage width.
+            canvas.width = window.innerWidth;
+
+            //equation to define the parameters of the spirograph.
+            //R = radius of outer circle.
+            //r = radius of inner circle.
+            //O = offset of the pen from the center.
+            //t = variable defined for later.
+            let R = 1, r = 1400, O = 10, t = 0.5;
+            let x, y, x1, y1;
+
+            let canvasContext = canvas.getContext('2d');
+            canvasContext.strokeStyle = 'black';
+            canvasContext.beginPath();
+            for (let t = 0; t <= 100 * Math.PI * 2; t += Math.PI / 36) {
+                canvasContext.moveTo(x1, y1);
+                x = canvas.width / 2 + ((R + r) * Math.cos(t) - (r + O) * Math.cos(((R + r) / r) * t));
+                y = canvas.height / 2 - ((R + r) * Math.sin(t) - (r + O) * Math.sin(((R + r) / r) * t));
+                canvasContext.lineTo(x, y);
+                x1 = x;
+                y1 = y;
+            }
+
+            canvasContext.stroke();
+            canvasContext.closePath();
+
+        }
+    </script>
+
+
+</body>
+
+</html>
