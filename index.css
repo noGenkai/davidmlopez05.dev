@@ -103,6 +103,14 @@ section {
     padding-bottom: 15%;
 }
 
+#section3 {
+  background-image:url("img/1986mets_img.jpg");
+  background-size: cover;
+
+  padding-top: 15%;
+  padding-bottom: 15%;
+}
+
 #background {
     background: black ;
     width: 50%;    
@@ -114,6 +122,7 @@ section {
   width: 50%;    
   margin-left: 5%;
   align-items: center;
+  text-align: center;
 }
 
 #paragraph {
@@ -155,6 +164,11 @@ footer{
 
     padding-top: 2%;
     padding-bottom: 2%;
+}
+
+.center {
+  margin-left: auto; 
+  margin-right: auto;
 }
 
 .btn {
@@ -224,4 +238,36 @@ footer{
       width: 100%;
       text-align: left;
     }
+  }
+
+  #MetsTitle {
+    text-align: center;
+    text-transform: uppercase;
+    background: white;
+    color:red;
+  }
+
+  #MetsTitle1 {
+    text-align: center;
+    background: white;
+    color:red;
+    font-size: medium;
+  }
+
+  table {
+    border-spacing: 0;
+    background: white;
+    color: red;
+  }
+  
+  table {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+  }
+
+  td, th {
+    border: 3px solid #000;
+    text-align: center;
+    padding: 10px;
   }
