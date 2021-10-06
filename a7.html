@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="index.css">
+
+    <title> Home </title>
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="content-wrap">
+            <nav>
+                <div class="topnav" id="myTopnav">
+                    <a href="#title" class="active">David M. Lopez</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <div class="dropdown">
+
+                        <button class="dropbtn">Instructions
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+
+                        <div class="dropdown-content">
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-1/">Instructions for
+                                A1</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-2/">Instructions for
+                                A2</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-3/">Instructions for
+                                A3</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-4/">Instructions for
+                                A4</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-5/">Instructions for
+                                A5</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-6/">Instructions for
+                                A6</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-7/">Instructions for
+                                A7</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-8/">Instructions for
+                                A8</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-9/">Instructions for
+                                A9</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-10/">Instructions for
+                                A10</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-11/">Instructions for
+                                A11</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-12/">Instructions for
+                                A12</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-13/">Instructions for
+                                A13</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-14/">Instructions for
+                                A14</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-15/">Instructions for
+                                A15</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Assignments
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="a1.html">A1: Hello World!</a>
+                            <a href="a2.html">A2: Full Website.</a>
+                            <a href="a3.html">A3: Form.</a>
+                            <a href="a4.html">A4: Calculator.</a>
+                            <a href="a5.html">A5: Spirographs.</a>
+                            <a href="a6.html">A6: World Series Mets.</a>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0);" style="font-size:15px;" class="icon"
+                        onclick="myFunction()">&#9776;</a>
+                </div>
+            </nav>
+
+            <section>
+                <div>
+                    <input type="button" value="Deal Card." id="deal">
+                </div>
+            </section>
+
+            <footer>
+                Created by: David M. Lopez
+            </footer>
+        </div>
+    </div>
+    <script>
+        $('#deal').click(function () {
+            dealCard(randomCard());
+        });
+
+        var cardsInDeck = new Array();
+        var numberOfCardsInDeck = 5;
+        cardsInDeck[0] = "2_of_clubs";
+        cardsInDeck[1] = "2_of_clubs";
+        cardsInDeck[2] = "2_of_clubs";
+        cardsInDeck[3] = "2_of_clubs";
+        cardsInDeck[4] = "2_of_clubs";
+
+        function dealCard(i) {
+            if (numberOfCardsInDeck == 0) return false;
+            var img = document.createElement("img");
+            img.src = "img/deckOfCards" + cardsInDeck[i] + ".png";
+
+            document.body.appendChild(img);
+            removeCard(i);
+        }
+
+        function randomCard() {
+            return Math.floor(Math.random() * numberOfCardsInDeck);
+        }
+
+        function removeCard(c) {
+            // simply make every higher numbered card move down 1
+            for (j = c; j <= numberOfCardsInDeck - 2; j++) {
+                cardsInDeck[j] = cardsInDeck[j + 1];
+            }
+            numberOfCardsInDeck--;
+        }
+
+
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
