@@ -191,6 +191,31 @@ footer{
   font-size: medium;
 }
 
+.btn3 {
+  border: 2px solid black;
+
+  color: black; text-decoration: none;
+  background-color: lightskyblue;
+
+  margin-left: 10%;
+  padding: 0.4% 1% 0.4% 1%;
+  font-size: large;
+}
+
+.sectionA7 {
+  background-color: white;
+}
+
+.trash {
+  width: 200px;
+  height: 250px;
+  margin-left: 70%;
+  margin-bottom: 8%;
+
+  position: absolute;
+  bottom: 0;
+}
+
 .bodybody { 
   margin: 0; 
   overflow: hidden;
