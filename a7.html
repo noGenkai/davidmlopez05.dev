@@ -78,9 +78,17 @@
             </div>
         </nav>
 
+
+        <div class="btn1" >
+            <p> Upon click of the "Deal Card." button, you will be dealt a card. </p>
+            <p> You have 54 cards. </p>
+            <p> Drag one of your cards into the trash bin if you wish to delete it.</p>
+        </div>
         <section class="sectionA7">
             <br>
             <br>
+
+
 
             <div>
                 <input class="btn3" type="button" value="Deal Card." style="float: left" id="deal">
@@ -175,10 +183,10 @@
             }
 
             if (cardsInDeck1 < cardsInDeck.length) {
-                alert ("Win");
+                alert("Win");
             }
-            var cardsInDeck1 = cardsInDeck.length; 
-            
+            var cardsInDeck1 = cardsInDeck.length;
+
 
             var img = document.createElement("img");
             img.src = "img/deckOfCards/" + cardsInDeck[i] + ".png";
@@ -205,7 +213,7 @@
             // simply make every higher numbered card move down 1
             for (j = c; j <= numberOfCardsInDeck - 2; j++) {
                 cardsInDeck[j] = cardsInDeck[j + 1];
-                
+
             }
             numberOfCardsInDeck--;
         }
@@ -213,13 +221,13 @@
         function handleDropEvent(event, ui) {
             var draggable = ui.draggable;
             hideImage(draggable);
-            
+
         }
 
         function hideImage(img) {
             $(img).hide();
-            alert ("You have removed a card from your visible deck.");
-            
+            alert("You have removed a card from your visible deck.");
+
         }
 
         function myFunction() {
