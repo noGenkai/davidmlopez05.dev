@@ -11,7 +11,7 @@
     <title> Home </title>
 </head>
 
-<body>
+<body onload="animate();">
     <div class="page-container">
         <div class="content-wrap">
             <nav>
@@ -71,7 +71,7 @@
                             <a href="a6.html">A6: World Series Mets.</a>
                             <a href="a7.html">A7: Deal and Delete.</a>
                             <a href="a8.html">A8: Free Week.</a>
-                            <a href="a9.html">A9: Animated Canvas.</a>
+
                         </div>
                     </div>
 
@@ -79,39 +79,7 @@
                         onclick="myFunction()">&#9776;</a>
                 </div>
             </nav>
-
-
-            <header>
-                davidmlopez05.dev
-            </header>
-
-            <section>
-                <div id="section1">
-                    <div id="background">
-                        <p id="paragraph">
-                            This website was created for COP4813, Web Systems 1. I will be displaying all fifteen
-                            assignments
-                            for this class on this domain.
-
-                            This website was created for COP4813, Web Systems 1. I will be displaying all fifteen
-                            assignments
-                            for this class on this domain.
-
-                            This website was created for COP4813, Web Systems 1. I will be displaying all fifteen
-                            assignments
-                            for this class on this domain.
-
-                            This website was created for COP4813, Web Systems 1. I will be displaying all fifteen
-                            assignments
-                            for this class on this domain.
-
-                            This website was created for COP4813, Web Systems 1. I will be displaying all fifteen
-                            assignments
-                            for this class on this domain.
-                        </p>
-                    </div>
-                </div>
-            </section>
+                <canvas id="myCanvas" width="400" height="400"></canvas>
 
             <footer>
                 Created by: David M. Lopez
@@ -120,13 +88,55 @@
     </div>
     <script>
         function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
+            var t = document.getElementById("myTopnav");
+            if (t.className === "topnav") {
+                t.className += " responsive";
             } else {
-                x.className = "topnav";
+                t.className = "topnav";
             }
         }
+
+
+    
+            //define variable
+            var context;
+            //define the path of the ball
+            var x = 401;
+            var y = 20;
+            var dx = 5;
+            var dy = 5;
+            //color the ball
+            var color = "red";
+
+            //function animate to draw and animate the ball on the HTML5 canvas
+            function animate() {
+                context = myCanvas.getContext('2d');
+                //define the speed of the ball
+                setInterval(draw, 1);
+            }
+
+            //function draw to create the ball
+            function draw() {
+                //define how much of the ball's path will be covered
+                context.clearRect(0, 0, 200, 200);
+                context.beginPath();
+                context.fillStyle = color;
+                //determines the radius of the ball
+                context.arc(x, y, 20, 0, Math.PI * 2, true);
+                context.closePath();
+                context.fill();
+                //creates the boundary for the ball; without this, the ball will not stop within the parameters of the canvas
+                if (x < 0 || x > 400) dx = -dx;
+                if (y < 0 || y > 400) dy = -dy;
+                x += dx;
+                y += dy;
+            }
+
+            //onclick function myCanvas to change the color of the ball from red to purple with a mouse click
+            myCanvas.onclick = function () {
+                var randomColor = Math.floor(Math.random()*16777215).toString(16);
+                color = "#" + randomColor;
+            }
     </script>
 
 </body>
