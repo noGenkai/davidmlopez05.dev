@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="index.css">
+
+    <title> Home </title>
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="content-wrap">
+            <nav>
+                <div class="topnav" id="myTopnav">
+                    <a href="#title" class="active">David M. Lopez</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <div class="dropdown">
+
+                        <button class="dropbtn">Instructions
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+
+                        <div class="dropdown-content">
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-1/">Instructions for
+                                A1</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-2/">Instructions for
+                                A2</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-3/">Instructions for
+                                A3</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-4/">Instructions for
+                                A4</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-5/">Instructions for
+                                A5</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-6/">Instructions for
+                                A6</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-7/">Instructions for
+                                A7</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-8/">Instructions for
+                                A8</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-9/">Instructions for
+                                A9</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-10/">Instructions for
+                                A10</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-11/">Instructions for
+                                A11</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-12/">Instructions for
+                                A12</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-13/">Instructions for
+                                A13</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-14/">Instructions for
+                                A14</a>
+                            <a href="http://roneaglin.online/cop4813/home/assignments/assignment-15/">Instructions for
+                                A15</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Assignments
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="a1.html">A1: Hello World!</a>
+                            <a href="a3.html">A3: Form.</a>
+                            <a href="a4.html">A4: Calculator.</a>
+                            <a href="a5.html">A5: Spirographs.</a>
+                            <a href="a6.html">A6: World Series Mets.</a>
+                            <a href="a7.html">A7: Deal and Delete.</a>
+                            <a href="a8.html">A8: Free Week.</a>
+                            <a href="a9.html">A9: Animated Canvas.</a>
+                        </div>
+                    </div>
+
+                    <a href="javascript:void(0);" style="font-size:15px;" class="icon"
+                        onclick="myFunction()">&#9776;</a>
+                </div>
+            </nav>
+
+            <h1 style="margin-left: 17%">Degree Planner: Associate's in Environmental Science
+                <span class="tooltiptext">
+                    This degree planner is purposed for the easy and efficient layout of one's <b style="color:lightcoral">Environmental Science</b> degree.
+                    <br> &#8592;&#8592;&#8592;&#8592;&#8592;&#8592;&#8592;&#8592; Drag courses left if you have completed them.
+                    <br>Drag courses right to plan for future semesters.
+                    &#8594;&#8594;&#8594;&#8594;&#8594;&#8594;&#8594;&#8594;
+                    <br> To print results - click <b style="color:lightcoral">What Can I Take?</b> and click the Print button.
+                </span>
+            </h1>
+
+            <div style="clear:left;">
+                <div class="greenbox">
+                    Green courses are Draggable indicating pre-requisites are met
+                    <span class="tooltiptext">If you have met the pre-requisite by taking
+                        an equivalent class you should drag the associated class into the
+                        Completed column.</span>
+                </div>
+                <div class="blackbox">
+                    Black courses mean pre-requisites are not met.
+                </div>
+                <div class="whitebox">
+                    <input type="button" value="What Can I Take?" id="allAvailable" class="button" />
+                    <input type="button" value="Undo" id="undo" class="button" />
+                </div>
+            </div>
+            <br />
+            <br />
+            <div style="clear:left">
+                <table class="thetable">
+                    <tr>
+                        <th>Drag Completed Courses Here</th>
+                        <th>All Courses</th>
+                        <th>Drag Semester Plan</th>
+
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <div id="completed" class="completed">
+                                <div class="hours">
+
+                                    <div id="CompletedHours"> Hours Completed: </div>
+                                    <div id="ProgramHours">Program Hours (36 required): </div>
+                                </div>
+                                <br />
+                                <div id="completedclasses" class="completedclasses">
+                                    <b>Completed Courses</b><br />
+                                </div>
+
+                                <br />
+
+                            </div>
+                        </td>
+                        <td valign="top">
+                            <div id="all">
+
+                            </div>
+                        </td>
+                        <td valign="top">
+                            <div id="available"> </div>
+                            <div id="semester1" class="semester">
+                                <div id="semester1hours" class="hours">
+                                    Semester 1 - Spring
+                                </div>
+                                <div id="semesterclasses1" class="semesterclasses">
+                                </div>
+
+                                <br />
+                            </div>
+                            <br />
+                            <div id="semester2" class="semester">
+                                <div id="semester2hours" class="hours">
+                                    Semester 2 - Summer
+                                </div>
+                                <div id="semesterclasses2" class="semesterclasses">
+                                </div>
+
+                                <br />
+                            </div>
+                            <br />
+                            <div id="semester3" class="semester">
+                                <div id="semester3hours" class="hours">
+                                    Semester 3 - Fall
+                                </div>
+                                <div id="semesterclasses3" class="semesterclasses">
+                                </div>
+
+                                <br />
+                            </div>
+
+                            <br />
+                            <div id="semester4" class="semester">
+                                <div id="semester4hours" class="hours">
+                                    Semester 4 - Spring
+                                </div>
+                                <div id="semesterclasses4" class="semesterclasses">
+                                </div>
+
+                                <br />
+                            </div>
+
+                            <br />
+                            <div id="semester5" class="semester">
+                                <div id="semester5hours" class="hours">
+                                    Semester 5 - Summer
+                                </div>
+                                <div id="semesterclasses5" class="semesterclasses">
+                                </div>
+
+                                <br />
+                            </div>
+
+                            <br />
+                            <div id="semester6" class="semester">
+                                <div id="semester6hours" class="hours">
+                                    Semester 6 - Fall
+                                </div>
+                                <div id="semesterclasses6" class="semesterclasses">
+                                </div>
+
+                                <br />
+                            </div>
+
+                            <br />
+                            <div id="semester7" class="semester">
+                                <div id="semester7hours" class="hours">
+                                    Semester 7 - Spring
+                                </div>
+                                <div id="semesterclasses6" class="semesterclasses">
+                                </div>
+
+                                <br />
+                            </div>
+
+                            <br />
+                            <div id="semester8" class="semester">
+                                <div id="semester6hours" class="hours">
+                                    Semester 8 - Summer
+                                </div>
+                                <div id="semesterclasses8" class="semesterclasses">
+                                </div>
+
+                                <br />
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+
+            <div id="box"></div>
+            <div id="dialog" class="whatcanitake">
+            </div>
+
+            <footer>
+                Created by: David M. Lopez
+            </footer>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+
+
+        $(document).ready(function () {
+            // executes when HTML-Document is loaded and DOM is ready
+            createListAll();
+            setDropTargets();
+
+            //createListAvailable();
+        });
+
+        // taken - has the student taken the course - true/false
+        // PRMet - Are the pre-requisites met - true/false
+        // required - Is completion of course required for graduation true/false
+        // semester - indicates semester course is taken -1 for previous, 1-6 for planned
+        // program - Is the course  part of the program 48 hours
+        // offered - Text of proposed semester offerings
+        // details - Details of the course - displays on hover
+
+        var courselist = [{
+            "Course": "ENC1101",
+            "Name": "Introduction to Composition",
+            "PRMet": true,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": false,
+            "offered": "Fall, Spring, Summer",
+            "details": "This course is designed to develop students' skills as critical readers and thinkers. Pre-requisite for SPC2608, Oral Communications + HUM2020, Intro to Humanities + EVR2861, Environmental Policy and Law."
+        }, {
+            "Course": "SPC2608",
+            "Name": "Oral Communications",
+            "PreReq": ["ENC1101"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": false,
+            "offered": "Fall, Spring, Summer",
+            "details": "This course covers the basic principles of speech communication, including practice with various types and methods of oral expression."
+        }, {
+            "Course": "MAT0022",
+            "Name": "Integrated Arithmetic and Algebra",
+            "PRMet": true,
+            "taken": false,
+            "semester": 0,
+            "hours": 5,
+            "required": false,
+            "program": false,
+            "offered": "Fall, Spring, Summer",
+            "details": "This course is a review of arithmetic involving basic operations of whole numbers, fractions, decimals and percents. Pre-requisite for MAT1033, Intermediate Algebra."
+        }, {
+            "Course": "MAT1033",
+            "Name": "Intermediate Algebra",
+            "PreReq": ["MAT0022"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 4,
+            "required": false,
+            "program": false,
+            "offered": "Fall, Spring, Summer",
+            "details": "Topics include: Graphing linear functions...adding and multiplying these functions as well as methods to solve equations involving these types of functions. Pre-requisite for MAC1105, College Algebra + CHM1025C, Intro to Chemistry+Lab + MET2010, Meteorology + EVS2026C, Chem+Bio of Natural Waters+Lab + OCE1001L, Intro to Oceanology Lab."
+        }, {
+            "Course": "MAC1105",
+            "Name": "College Algebra",
+            "PreReq": ["MAT1033"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": false,
+            "offered": "Fall, Spring, Summer",
+            "details": "Topics include: Polynomial and rational equations and inequalities, graphs of functions... linear and nonlinear systems of inequalities. Pre-requisite for STA2023, Elementary Statistics + PCB2033C, Intro to Ecology+Lab."
+        }, {
+            "Course": "STA2023",
+            "Name": "Elementary Statistics",
+            "PreReq": ["MAC1105"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": false,
+            "offered": "Fall, Spring, Summer",
+            "details": "Topics include: A survey of descriptive statistics and graphs, probability, hypothesis testing...statistical applications. Pre-requisite for PCB2033C, Intro to Ecology+Lab + EVR2630, Hazardous Material Risk Analysis."
+        }, {
+            "Course": "CHM1025C",
+            "Name": "Intro to Chemistry+Lab",
+            "PreReq": ["MAT1033"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 4,
+            "required": true,
+            "program": false,
+            "offered": "Fall, Spring, Summer",
+            "details": "Survey of modern chemistry, designed particularly for those with little or no chemistry background or for those needing an overview of chemistry. Pre-requisite for SOS2006C, Intro to Soil Science+Lab + SOS2006C, Intro to Soil Science+Lab + EVR2647, Environmental Site Assessment + EVR2630, Hazardous Material Risk Analysis."
+        }, {
+            "Course": "OCE1001",
+            "Name": "Intro to Oceanography",
+            "PRMet": true,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": false,
+            "offered": "Fall, Spring",
+            "details": "An introduction to oceanography, including the geology, biology, chemistry, physics and hydrology of the world's ocean basins and the coupling effects of the ocean and atmosphere. Pre-requisite for OCE1001L, Intro to Oceanology Lab."
+        }, {
+            "Course": "MET2010",
+            "Name": "Meteorology",
+            "PreReq": ["MAT1033"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": false,
+            "offered": "Fall, Spring",
+            "details": "An introduction to the fundamentals of weather and climate."
+        }, {
+            "Course": "HUM2020",
+            "Name": "Intro to Humanities",
+            "PreReq": ["ENC1101"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": false,
+            "offered": "Fall, Spring, Summer",
+            "details": "Taking a thematic approach, this course explores how the human experience is expressed creatively through the arts, including visual arts, music, literature and philosophy."
+        }, {
+            "Course": "GEO2000",
+            "Name": "World Geography",
+            "PRMet": true,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": false,
+            "offered": "Fall, Spring, Summer",
+            "details": "A study of the Earth in spatial terms, place names of major countries and world regions, maps, globes and physical-human phenomena of environments and places."
+        }, {
+            "Course": "SLS1127",
+            "Name": "Peer Mentoring Experience",
+            "PRMet": true,
+            "taken": false,
+            "semester": 0,
+            "hours": 0,
+            "required": true,
+            "program": true,
+            "offered": "Fall, Spring",
+            "details": "Students are socialized into the Institute of Marine and Environmental Studies (IMES)."
+        }, {
+            "Course": "EVR2001L",
+            "Name": "Intro to Environmental Science+Lab",
+            "PRMet": true,
+            "taken": false,
+            "semester": 0,
+            "hours": 4,
+            "required": true,
+            "program": true,
+            "offered": "Fall, Spring",
+            "details": "This is an introductory lecture course linking the human and physical/biological worlds. Pre-requisite for EVR2647, Environmental Site Assessment + EVR2630, Hazardous Material Risk Analysis."
+        }, {
+            "Course": "EVR2861",
+            "Name": "Environmental Policy and Law",
+            "PreReq": ["ENC1101"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": true,
+            "offered": "Fall",
+            "details": "This course is designed to provide an overview of general environmental and land use law including permitting, enforcement, toxic substances, and environmental litigation issues."
+        }, {
+            "Course": "EVR2943",
+            "Name": "Environmental Internship",
+            "PRMet": true,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": true,
+            "offered": "Summer",
+            "details": "This course provides students with meaningful work experience in the field of environmental science."
+        }, {
+            "Course": "GIS2040C",
+            "Name": "Geographic Information Systems+Lab",
+            "PRMet": true,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": true,
+            "offered": "Spring",
+            "details": "This course introduces the hardware and software components of a geographic information system (GIS) and reviews GIS applications. Pre-requisite for EVR2647, Environmental Site Assessment."
+        }, {
+            "Course": "SOS2006C",
+            "Name": "Intro to Soil Science+Lab",
+            "PreReq": ["CHM1025C"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 4,
+            "required": true,
+            "program": true,
+            "offered": "Spring",
+            "details": "Students will learn topics in soil and water science, including soil physical characteristics, soil fertility and the influence of nutrients on growth of plants."
+        }, {
+            "Course": "BSC1005",
+            "Name": "Survey of Biological Sciences",
+            "PRMet": true,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": true,
+            "offered": "Fall, Spring, Summer",
+            "details": "A survey of topics in biology designed to meet the informational needs of the non-scientist."
+        }, {
+            "Course": "SWS2007",
+            "Name": "The World of Water",
+            "PRMet": true,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": true,
+            "offered": "Spring",
+            "details": "This is an introductory course addressing the roles of water in the environment."
+        }, {
+            "Course": "EVR2647",
+            "Name": "Environmental Site Assessment",
+            "PreReq": ["CHM1025C","EVR2001L", "GIS2040C"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": true,
+            "offered": "Summer",
+            "details": "Successful students will learn the fundamentals of Environmental Site Assessment bases and procedures."
+        }, {
+            "Course": "EVR2630",
+            "Name": "Hazardous Material Risk Analysis",
+            "PreReq": ["CHM1025C","EVR2001L", "STA2023"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": true,
+            "offered": "Spring",
+            "details": "Students learn techniques to recognize safety concerns; how to initiate safety protocols; and how to use available resources to assist in the management of a hazardous accident."
+        }, {
+            "Course": "EVS2026C",
+            "Name": "Chem+Bio of Natural Waters+Lab",
+            "PreReq": ["MAT1033"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 4,
+            "required": true,
+            "program": true,
+            "offered": "Spring",
+            "details": "This is an introductory course providing an overview of the biological and chemical components of natural water systems, their importance to Earth’s ecosystems, and analysis techniques used to monitor these components."
+        }, {
+            "Course": "BOT2150",
+            "Name": "Native Plants of Central Florida",
+            "PRMet": true,
+            "taken": false,
+            "semester": 0,
+            "hours": 3,
+            "required": true,
+            "program": true,
+            "offered": "Spring",
+            "details": "This course will explore plants native to Central Florida including those in the coastal regions and inland wetlands and their interaction with the environment."
+        }, {
+            "Course": "BSC1010C",
+            "Name": "General Biology 1+Lab",
+            "PRMet": true,
+            "taken": false,
+            "semester": 0,
+            "hours": 4,
+            "required": true,
+            "program": true,
+            "offered": "Fall, Spring, Summer",
+            "details": "Basic principles, which apply to the nature of plant and animal cells, including metabolism, cellular reproduction, protein synthesis and genetics. Pre-requisite for BSC1011C, General Biology 2+Lab + PCB2033C, Intro to Ecology+Lab."
+        }, {
+            "Course": "BSC1011C",
+            "Name": "General Biology 2+Lab",
+            "PreReq": ["BSC1010C"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 4,
+            "required": true,
+            "program": true,
+            "offered": "Fall, Spring, Summer",
+            "details": "A survey of the evolution, morphology, physiology and ecology of the five kingdoms of living organisms."
+        }, {
+            "Course": "OCE1001L",
+            "Name": "Intro to Oceanography Lab",
+            "PreReq": ["MAT1033", "OCE1001"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 1,
+            "required": true,
+            "program": true,
+            "offered": "Spring",
+            "details": "This course is the lab component for OCE1001. This lab teaches the interdisciplinary aspects of physical, geological, chemical and biological oceanography."
+        }, {
+            "Course": "PCB2033C",
+            "Name": "Intro to Ecology+Lab",
+            "PreReq": ["BSC1010C", "MAC1105", "STA2023"],
+            "PRMet": false,
+            "taken": false,
+            "semester": 0,
+            "hours": 4,
+            "required": true,
+            "program": true,
+            "offered": "Fall",
+            "details": "This course explores the natural history, evolution and adaptation of fauna and flora to the environment with special emphasis on ecosystems of East Central Florida."
+        }];
+
+        var startDrag;
+
+        // These are array of classes taken for a given semester 
+        // A better design would be to add semester to the original courselist array
+        // 0 = Not taken, -1 = taken previous term, number indicating term = taken with term
+        // #eaglin - need this modification to implement Undo feature
+
+        var semesterHours = [0, 0, 0, 0, 0, 0]; // Total number of hours taken each semester
+        var semesters = [
+            [],  // semesters[0] - previously taken courses
+            [],  // semesters[1] - index of courses taken semester 1 
+            [],  // semesters[2] - same for semester 2
+            [],
+            [],
+            []
+        ]; // Array of array of courses taken for each semester
+
+        var undolist = [];
+
+        var programHours = 0;
+        var coursesTaken = ""; // String - used for printing
+        var coursesEnrolled = ""; // String - used for printing
+        //var coursesNeededArray = [];
+
+        function createListAll() {
+            // Primary function to build interface - goes through data - courselist array
+            // and builds List of courses to take
+            // Courses with pre-requisites met are green and draggable
+            // Courses with pre-requistes not met are yellow
+
+            for (var i = 0; i < courselist.length; i++) {
+                addCourseToList(i);
+            }
+        }
+
+        function addCourseToList(i) {
+            if (prerequisitesMet(i)) {
+                addCoursePrequistesMet(i);
+            } else // Pre-requisites are not met for course
+            {
+                addCoursePrerequisitesNotMet(i);
+            }
+        }
+
+        function addCoursePrequistesMet(i) {
+            // Creates a div container for the course with ID to match the array index of the courselist
+            // appends the div to the center div list of all courses and makes it draggable
+            var a = $('<div />', {
+                id: i.toString(),
+                class: 'classAvailable',
+                html: courselist[i].Course + " " + courselist[i].Name + String.fromCharCode(10) + " <br/> " + courselist[i].offered + "<span class='tooltiptext'>" + courselist[i].details + "</span>",
+
+            });
+            $("#all").append(a);
+
+            // Mak div draggable
+            $('#' + i).draggable({
+                start: function () {
+                    startDrag = $(this).position();
+                }
+            });
+        }
+
+        function addCoursePrerequisitesNotMet(i) {
+            // Creates a div container for the course with ID to match the array index of the courselist
+            // appends the div to the center div list of all courses - not made draggable
+
+            var a = $('<div />', {
+                id: i.toString(),
+                class: 'classNotAvailable',
+                html: courselist[i].Course + " " + courselist[i].Name + String.fromCharCode(10) + " <br/> " + courselist[i].offered + "<span class='tooltiptext'>" + courselist[i].details + "</span>",
+            });
+
+            $("#all").append(a);
+
+        }
+
+        function setDropTargets() {
+
+            // Sets the droppable and defines the function that is called when a 
+            // course is dropped into any one of the droppable slots - semesters or 
+            // courses already taken
+
+            $('#semester1').droppable({
+                drop: function (event, ui) { dropInSemester(ui, 1); }
+            });
+
+            $('#semester2').droppable({
+                drop: function (event, ui) { dropInSemester(ui, 2); }
+            });
+
+            $('#semester3').droppable({
+                drop: function (event, ui) { dropInSemester(ui, 3); }
+            });
+
+            $('#semester4').droppable({
+                drop: function (event, ui) { dropInSemester(ui, 4); }
+            });
+
+            $('#semester5').droppable({
+                drop: function (event, ui) { dropInSemester(ui, 5); }
+            });
+
+            $('#semester6').droppable({
+                drop: function (event, ui) { dropInSemester(ui, 6); }
+            });
+
+            // Course is dropped into the completed
+
+            $('#completed').droppable({
+                drop: function (event, ui) {
+                    var cid = ui.draggable.attr('id');
+                    courselist[parseInt(cid)].taken = true;
+
+                    // semesters[0] is integer ID of all taken course
+                    semesters[0].push(cid);
+                    undolist.push({ course: cid, semester: 0 });
+
+                    // Fills in div on page of completed classes and hides dragged div
+                    $('#completedclasses').html(semesterPrint(0));
+                    $('#' + cid).hide();
+
+
+                    semesterHours[0] += courselist[cid].hours; // Add to total hours taken
+                    if (courselist[cid].program) programHours += courselist[cid].hours;
+
+                    checkPrerequisites(cid, 0);
+                    $("#CompletedHours").html("Hours Completed: " + semesterHours[0]);
+                    $("#ProgramHours").html("Program Hours (48 required): " + programHours);
+
+                }
+            });
+        }
+        function dropInSemester(ui, sid) {
+            // The User Interface actions with call to logic for dropping a class 
+            // in a semester
+
+            var id = ui.draggable.attr('id');
+            if (!dropSemester(id, sid)) {
+                ui.draggable.animate({
+                    top: 0,
+                    left: 0
+                }, "slow");
+            }
+
+        }
+        function dropSemester(cid, sid) {
+            // Performs actions when student drops a course into a semester
+            // cid = course ID
+            // sid = semester ID
+            var icid = parseInt(cid); // Integer Course ID
+            var isid = parseInt(sid); // Integer Semester ID
+            var target = "#semester" + sid;
+
+            if (okToTake(icid, isid)) {
+
+                // The course being taken is tracked both in semesters and courselist
+                // semesters[i] - array of integer id's of courses taken
+                // courselist - array of courses
+                courselist[icid].taken = true; // designate course as having been taken 
+                courselist[icid].semester = isid; // designate the semester the course is being taken
+                semesters[isid].push(icid); // Puts the course into semester taken 
+                undolist.push({ course: cid, semester: sid });
+
+                // Adds to div (drop target)  as a string and hides dropped div
+                // removes semesters offered before dropping text
+                $("#semesterclasses" + sid).html(semesterPrint(sid));
+                $('#' + cid).hide(); // Hide original draggable DIV
+
+                // recheck pre-requistes and turn on draggable
+                checkPrerequisites();
+
+                // Update the number of hours in semester   
+                semesterHours[sid] += courselist[cid].hours;
+                $('#semester' + sid + "hours").html("Semester Hours: " + semesterHours[sid])
+                return true;
+            } else {
+                return false; // course is rejected due to no pre-requisites
+            }
+
+        }
+
+        function checkPrerequisites() {
+            // Determines if pre-requisites are met and if so - makes div draggable
+            // for new courses 
+
+            for (var i = 0; i < courselist.length; i++) {
+                if (prerequisitesMet(i)) {
+                    $('#' + i.toString()).css("background-color", "lightgreen");
+                    $('#' + i.toString()).draggable();
+                }
+            }
+        }
+
+        function okToTake(courseId, semesterId) {
+            // Cannot take courses in same semester as pre-requisites
+            // Answers true or false dependent on if pre-requisites are met
+            var preReqArray = courselist[courseId].PreReq;
+            if (preReqArray == null) return true;
+
+            preReqArray = getAllPrerequisites(courseId, preReqArray); // Gets all preRequistes for Course
+            var _courses = semesterCourses(semesterId); // Gets all courses taken in given semester - numeric array
+
+            var checked = true;
+            // Check against Prerequisite list for every pre-requisite
+            // check to see if thepre-requisute is being taken in the semester
+            // where the course is being dropped.
+            for (var i = 0; i < preReqArray.length; i++) {
+                for (var j = 0; j < _courses.length; j++) {
+                    if (preReqArray[i] == courselist[_courses[j]].Course) {
+                        checked = false;
+                    }
+                }
+            }
+
+            return checked;
+        }
+
+
+
+        function semesterCourses(sid) {
+            // Answers an integer array of the courses being taken in any given semester
+            var _courses = [];
+            for (var i = 0; i < courselist.length; i++) {
+                if (courselist[i].semester == sid) _courses.push(i);
+            }
+
+            return _courses;
+        }
+
+        function getAllPrerequisites(courseId, preReqArray) {
+            //Recursively gets all pre-requisites for a course and returns array
+            var coursePreReq = courselist[courseId].PreReq;
+            if (coursePreReq == null) return [];
+
+            for (var i = 0; i < coursePreReq.length; i++) {
+                var id = getIdFromCourseName(coursePreReq[i]);
+
+                if (courselist[id].PreReq == null) return preReqArray;
+
+                preReqArray = mergeArrays(preReqArray, getAllPrerequisites(id, courselist[id].PreReq));
+            }
+
+            return preReqArray;
+        }
+
+        function mergeArrays(a1, a2) {
+            for (var i = 0; i < a2.length; i++) {
+                if (!a1.includes(a2[i])) a1.push(a2[i]);
+            }
+            return a1;
+        }
+
+        function getIdFromCourseName(courseName) {
+            for (var i = 0; i < courselist.length; i++) {
+                if (courselist[i].Course == courseName) return i;
+            }
+            return 0;
+        }
+
+        function prerequisitesMet(courseId) {
+            // Looks at a course and determines if the pre-requisites are met
+
+            var preReqArray = courselist[parseInt(courseId)].PreReq;
+
+            if (preReqArray == null) {
+                return true;
+            }
+
+            var checked = true;
+            for (var i = 0; i < preReqArray.length; i++) {
+                if (!isTaken(preReqArray[i])) {
+                    checked = false;
+                }
+            }
+
+            return checked;
+        }
+
+
+        function isTaken(prereq) {
+            // determines if a course 
+            var taken = false;
+            for (var i = 0; i < courselist.length; i++) {
+                if ((courselist[i].Course == prereq) && (courselist[i].taken == true)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function whatCanITake() {
+            // Answers a string of all courses that can be taken - response to the 
+            // What Can I Take button
+
+            var cna = [];
+            var str_req = "";
+            var str_elec = "";
+            for (var i = 0; i < courselist.length; i++) {
+                cna[i] = courselist[i].Course + " " + courselist[i].Name;
+                if (prerequisitesMet(i)) {
+                    if (courselist[i].taken != true) {
+                        if (courselist[i].required)
+                            str_req += cna[i] + "<br/>";
+                        else
+                            str_elec += cna[i] + "<br/>";
+                    }
+                }
+            }
+            var str = "<b>Available Required Courses</b> </br><br/>" + str_req;
+            str += "<br/><b>Available Elective Courses</b><br/><br/>" + str_elec;
+            return str;
+        }
+
+        function semestersPrint() {
+            var str = "";
+            str += semesterHeaderPrint(1) + semesterPrint(1) + "<br/>";
+            str += semesterHeaderPrint(2) + semesterPrint(2) + "<br/>";
+            str += semesterHeaderPrint(3) + semesterPrint(3) + "<br/>";
+
+            return str;
+        }
+
+        function semesterPrint(sid) {
+            var s = "";
+            for (var i = 0; i < semesters[sid].length; i++) {
+                var cid = semesters[sid][i];
+                s += coursePrint(cid) + "<br/>";
+            }
+            return s;
+        }
+
+        function semesterHeaderPrint(sid) {
+            var s = "<br/><b>Semester " + sid + " ";
+            s += "Total hours: " + semesterHoursCount(sid) + "</b><br/><br/>";
+            return s;
+        }
+
+        function coursePrint(cid) {
+            return courselist[cid].Course + " " + courselist[cid].Name;
+        }
+
+        function semesterHoursCount(sid) {
+            var tot = 0;
+            for (var i = 0; i < semesters[sid].length; i++) {
+                var cid = semesters[sid][i];
+                tot += courselist[cid].hours;
+            }
+            return tot;
+        }
+
+        $("#undo").click(function () { executeUndo(); });
+
+        function executeUndo() {
+            if (undolist.length == 0) return;
+            var a = undolist.pop();
+            var cid = a.course; var sid = a.semester;
+            semesters[a.semester].pop();
+            courselist[a.course].taken = false;
+            $('#' + cid).show(); // Hide original draggable DIV
+            $('#' + cid).position({
+                my: "right bottom",
+                at: "right bottom",
+                of: "#all"
+            });
+
+            // recheck pre-requistes and turn on draggable
+            checkPrerequisites();
+
+            // Update the number of hours in semester   
+            semesterHours[sid] -= courselist[cid].hours;
+            $('#semester' + sid + "hours").html("Semester Hours: " + semesterHours[sid]);
+            if (sid == 0) { $("#completedclasses").html(semesterPrint(sid)); } else { $("#semesterclasses" + sid).html(semesterPrint(sid)); }
+        }
+
+        // Shows the what can I take dialog
+        $("#allAvailable").click(function () {
+            $('#dialog').html(whatCanITake());
+
+            $('#dialog').dialog({
+                modal: true,
+                buttons: {
+                    "Print": function () {
+                        print();
+                    },
+                    "Close": function () {
+                        $(this).dialog("close")
+                    }
+                }
+            });
+        });
+
+
+
+        function print() {
+            var str = "<h2>Program of Study - BSIT</h2>";
+            str += "<table><tr><td>";
+            str += "<b>Summary of Completed Hours</b></br>"
+            str += $('#completedclasses').html();
+            str += "<br/>";
+            str += whatCanITake();
+            str += "</td><td><b>Semester Course Plan</b><br/>";
+            str += semestersPrint();
+            str += "</td></tr></table>";
+            var aWindow = window.open("data:text/html;charset=utf-8," + str, "", "_blank");
+            aWindow.print();
+        }
+
+    </script>
+
+</body>
+</html>
