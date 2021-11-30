@@ -619,7 +619,6 @@ footer{
     
     .organize {
       margin: 20px;
-      margin-left:300px;
       margin-bottom: 100px;
       background: lightcoral;
       color: #000;
@@ -637,7 +636,6 @@ footer{
     .organize2 {
       margin-left: 45%; 
       margin-top: 20%;
-      background: white;
       color: fuchsia;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       font-size: large;
@@ -646,11 +644,9 @@ footer{
     
     .organize3 {
       margin-left: 20%;
-      margin-top: auto;
-      color:darkcyan  ;
+      color:#000;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       font-size: large;
-      background: white;
     }
 
     .organize4 {
@@ -659,4 +655,4 @@ footer{
       color: #000;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       font-size: xx-large;
-        }
+      }
