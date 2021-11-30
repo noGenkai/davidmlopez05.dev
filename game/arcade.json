@@ -1,0 +1,27 @@
+{
+	"name": "Project",
+	"version": "1.0.0.0",
+	"description": "",
+	"id": "",
+	"unique-id": "gwb46n20ng8",
+	"viewport-width": 600,
+	"viewport-height": 400,
+	"author": "",
+	"email": "",
+	"website": "",
+	"orientations": "landscape",
+	"c2version": "244",
+	"c3version": "r268",
+	"ife": true,
+	"used-plugins": [
+		"Sprite",
+		"Keyboard",
+		"TiledBg",
+		"Text"
+	],
+	"used-behaviors": [
+		"Platform",
+		"solid",
+		"MoveTo"
+	]
+}
